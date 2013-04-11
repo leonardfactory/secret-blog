@@ -5,7 +5,7 @@ git add -A
 git status -s | git commit -F-
 git push origin master || exit
 
-jekyll build --no-auto || exit
+jekyll --no-auto || exit
 git checkout gh-pages
 git rm -qr .
 cp -r _site/. .
