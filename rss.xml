@@ -5,10 +5,28 @@
         <description>LeonardBlog - Leonard</description>
         <link>http://blog.leonardfactory.com</link>
         <link>http://blog.leonardfactory.com</link>
-        <lastBuildDate>2013-04-12T00:10:40+02:00</lastBuildDate>
-        <pubDate>2013-04-12T00:10:40+02:00</pubDate>
+        <lastBuildDate>2013-04-12T00:19:01+02:00</lastBuildDate>
+        <pubDate>2013-04-12T00:19:01+02:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Something unique</title>
+                <description>&lt;p&gt;So, how can i say it. This is fucking &lt;strong&gt;awesome&lt;/strong&gt;. Like a shrimp.&lt;/p&gt;
+
+&lt;p&gt;Exactly. Like a shrimp.&lt;/p&gt;
+
+&lt;p&gt;So lovable shrimps.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;css
+.class {
+	background-color: rgba(green, 0.5);
+}
+&lt;/code&gt;&lt;/p&gt;</description>
+                <link>http://blog.leonardfactory.com/new-here/2013/04/12/something-unique</link>
+                <guid>http://blog.leonardfactory.com/new-here/2013/04/12/something-unique</guid>
+                <pubDate>2013-04-12T00:00:00+02:00</pubDate>
+        </item>
 
         <item>
                 <title>My first post in Keyll is awesome</title>

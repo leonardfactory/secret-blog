@@ -8,4 +8,5 @@ http://blog.leonardfactory.com/rss.xml
 http://blog.leonardfactory.com/sitemap.txt
 http://blog.leonardfactory.com/tags.html
 
+http://blog.leonardfactory.com/new-here/2013/04/12/something-unique
 http://blog.leonardfactory.com/2013/04/12/my-first-post-in-keyll-is-awesome

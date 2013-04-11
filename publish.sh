@@ -2,7 +2,7 @@
 # Generate files and push to github
 git checkout master
 git add -A
-git status -s | git commit -F-
+git status -s | git commit -F- # Use last edits short description to make commit message
 git push origin master || exit
 
 jekyll --no-auto || exit
@@ -14,4 +14,5 @@ git add -A
 git status -s | git commit -F-
 git push origin gh-pages || exit
 git checkout master
+echo "\n"
 echo 'Published! You are a nice guy :)'
