@@ -1,0 +1,10 @@
+@import 'compass';
+
+$base-color: #FFFFFF;
+
+.test {
+	@include border-radius(20px);
+	width: 80em;
+	height: 80em;
+	background-color: darken($base-color, 20%);
+}

@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "Something unique"
-description: ""
+description: Hi!
 category: new-here
-tags: []
 ---
 {% include JB/setup %}
 So, how can i say it. 

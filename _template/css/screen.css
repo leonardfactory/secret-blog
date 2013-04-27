@@ -1,0 +1,223 @@
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+.clearfix, .container, section {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.pie-clearfix {
+  *zoom: 1;
+}
+.pie-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.max-width {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #666666;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #666666;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+}
+a:hover, a:focus, a:active {
+  color: #222222;
+}
+
+h1 {
+  font-size: 2.25em;
+  line-height: 1.1111111em;
+  margin: 0 0 0.6666667em 0;
+}
+
+h2 {
+  font-size: 1.875em;
+  line-height: 1.3333333em;
+  margin: 1.0666667em 0 0.5333333em 0;
+}
+
+h3 {
+  font-size: 1.375em;
+  line-height: 1.4545455em;
+  margin: 1.4545455em 0 0.7272727em 0;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 0 0 0.4em 0;
+}
+
+h5 {
+  font-size: 1.125em;
+  line-height: 1.3333333em;
+  margin: 0 0 0.4444444em 0;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 0.5em 0;
+}
+
+p, pre, label {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+ol, ul {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 2em 0;
+}
+
+li {
+  line-height: auto;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+em, i, q {
+  font-style: italic;
+}
+
+blockquote {
+  padding-left: 1em;
+  border-left: 0.3125em solid grey;
+  line-height: normal;
+  margin: 0;
+}
+blockquote p {
+  font-style: italic;
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 1.2em 0 1.2em 0;
+}
+
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* Example styles - you'll most likey want to remove*/
+header {
+  padding-top: 2em;
+  padding-bottom: 1em;
+  margin-bottom: 3em;
+  background: #333;
+}
+header h1 {
+  color: #fff;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+/* ::Media queries */
+/* ------------------------------------------------------------ */
+@media screen and (min-width: 30em) {
+  .container {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 50em) {
+  .container {
+    min-width: 48.75em;
+  }
+}
+@media screen and (min-width: 77.5em) {
+  .container {
+    max-width: 67.5em;
+  }
+}
+@media print {
+  body {
+    font-size: 62.5%;
+    line-height: 1em;
+  }
+}
+@media screen and (max-width: 769px) {
+  -webkit-text-size-adjust: none;
+}
+/* ::State styles */
+/* ------------------------------------------------------------ */
+.is-hidden {
+  display: none;
+}
+
+.is-shown, .is-block {
+  display: block;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+/* ::Debugs and #grid by Jon Gibbins */
+/* ----------------------------------------------------------- */
+#grid {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#grid div.horiz {
+  height: 8px;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding: 0;
+}
