@@ -54,11 +54,14 @@
 
 html {
 	font-size: 100%;
+
+	background-image: url('images/bg.png');
+	background-repeat: repeat;
 }
 
 body { 
 	color: $base-color;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Droid Serif', Georgia, serif;
 }
 
 a {
@@ -72,13 +75,28 @@ a {
 // Import base typography into the cascade (if required)
 @import "libs/typography"; 		
 
+// Build up font from fonts/
+@font-face {
+	font-family: 'blanchcaps';
+	src: url('fonts/blanch_caps-webfont.eot');
+	src: url('fonts/blanch_caps-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/blanch_caps-webfont.woff') format('woff'),
+	url('fonts/blanch_caps-webfont.ttf') format('truetype'),
+	url('fonts/blanch_caps-webfont.svg#blanchcaps') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
+// Setting up custom font to be used in the blog
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'blanchcaps', 'Helvetica Neue', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.12em;
 
-// -------------------------------------------------------------------------------------------------------
+	@include adjust-font-size-to(48px);
 
-// All the below can be removed if need be
-
-// -------------------------------------------------------------------------------------------------------
+	color: $secondary;
+}
 
 
 
@@ -94,17 +112,61 @@ a {
 
 /* Example styles - you'll most likey want to remove*/
 header {
-	@include padding-leader(4);
-	@include padding-trailer(2);
-	@include trailer(6);
-	background: #333;
-	h1 { color: #fff; }
+	margin: 0 auto;
+	@include margin-leader(2);
+	@include margin-trailer(6);
+
+	background-image: url('images/logo.png');
+	background-repeat: no-repeat;
+}
+
+article {
+	@extend .clearfix;
+	margin: 0 auto;
+}
+
+
+
+.date {
+	font-family: 'blanchcaps';
+	text-align: center;
+
+	@include adjust-font-size-to(28px);
+	line-height: em-font(12px);
+
+	width: em-font(24px);
+
+	span.day {
+		color: $light-gray;
+	}
+
+	span.number {
+		@include adjust-font-size-to(24px);
+		line-height: inherit;
+		color: $secondary;
+	}
+
+	span.month {
+		color: $tertiary;
+	}
+}
+
+.date:after {
+	// @extend .clearfix; ?
+	content: "";
+	display: block;
+	width: 13px;
+	height: 13px;
+	background: url('images/star.png');
+}
+
+.post {
+	margin-left: em-font(100px);
 }
 
 section 				{ @extend .clearfix; }
-h1 						{ font-weight: 600; }
-ol 						{ @include ordered-inside }
-ul 						{ @include unordered-inside }
+ol 						{ @include ordered-inside; }
+ul 						{ @include unordered-inside; }
 
 
 
@@ -115,27 +177,89 @@ ul 						{ @include unordered-inside }
 
 // Below examples use a mobile-first approach
 
+@media screen and (min-width: em-font(320px)) {
+	header {
+		width: 94%;
+		background-position: center;
+		height: 202px;
+		@include background-size("contain");
+	}
+
+	.date-column {
+		width: 100%;
+	}
+
+	.date {
+		width: 100%;
+	}
+
+	.date:after {
+		margin: em-font(16px) auto  em-font(8px) auto;
+	}
+
+	article {
+		width: 90%;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	.post {
+		margin-left: 0;
+	}
+}
 
 // Eg for 480px
 @media screen and (min-width: em-font(480px)) {
-	.container {
-		width: 95%;
+	article {
+		width: 80%;
 	}
 }
 
 
 // Eg for 800px
 @media screen and (min-width: em-font(800px)) {
-	.container {
-		min-width: em-font(780px);
+
+	header {
+		//margin: inherit auto;
+		width: 404px;
+		height: 202px;
+	}
+
+	.date-column {
+		float: left;
+		text-align: left;
+		width: em-font(100px);
+	}
+
+	.date {
+		width: em-font(24px);;
+	}
+
+	.date:after {
+		float: left;
+		margin: auto;
+		margin-left: 2.15em;
+		margin-top: -1.6em;
+	}
+
+	h1 {
+		text-align: left;
+	}
+
+	.post {
+		margin-left: em-font(100px);
+	}
+
+	article {
+		width: 60%;
 	}
 }
 
 // Eg for 1240px
 @media screen and (min-width: em-font(1240px)) {
-	.container {
-		max-width: em-font(1080px);
-	}
+
 }
 
 // Print styles

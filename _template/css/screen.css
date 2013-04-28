@@ -1,6 +1,6 @@
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-.clearfix, .container, section {
+.clearfix, .container, article, section {
   overflow: hidden;
   *zoom: 1;
 }
@@ -23,15 +23,17 @@
 /* ------------------------------------------------------------ */
 html {
   font-size: 100%;
+  background-image: url("images/bg.png");
+  background-repeat: repeat;
 }
 
 body {
-  color: #666666;
-  font-family: Helvetica, Arial, sans-serif;
+  color: #4b4b4b;
+  font-family: 'Droid Serif', Georgia, serif;
 }
 
 a {
-  color: #666666;
+  color: #4b4b4b;
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -42,13 +44,13 @@ a {
   word-wrap: break-word;
 }
 a:hover, a:focus, a:active {
-  color: #222222;
+  color: #a84242;
 }
 
 h1 {
   font-size: 2.25em;
   line-height: 1.1111111em;
-  margin: 0 0 0.6666667em 0;
+  margin: 0 0 0.4444444em 0;
 }
 
 h2 {
@@ -82,9 +84,9 @@ h6 {
 }
 
 p, pre, label {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0 0 1em 0;
+  font-size: 1.375em;
+  line-height: 1.4545455em;
+  margin: 0 0 0.7272727em 0;
 }
 
 ol, ul {
@@ -129,6 +131,23 @@ blockquote p {
   margin: 1.2em 0 1.2em 0;
 }
 
+@font-face {
+  font-family: 'blanchcaps';
+  src: url("fonts/blanch_caps-webfont.eot");
+  src: url("fonts/blanch_caps-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/blanch_caps-webfont.woff") format("woff"), url("fonts/blanch_caps-webfont.ttf") format("truetype"), url("fonts/blanch_caps-webfont.svg#blanchcaps") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'blanchcaps', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 3em;
+  line-height: 1.1666667em;
+  color: #a84242;
+}
+
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */
 .container {
@@ -138,17 +157,48 @@ blockquote p {
 
 /* Example styles - you'll most likey want to remove*/
 header {
-  padding-top: 2em;
-  padding-bottom: 1em;
+  margin: 0 auto;
+  margin-top: 1em;
   margin-bottom: 3em;
-  background: #333;
-}
-header h1 {
-  color: #fff;
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
 }
 
-h1 {
-  font-weight: 600;
+article {
+  margin: 0 auto;
+}
+
+.date {
+  font-family: 'blanchcaps';
+  text-align: center;
+  font-size: 1.75em;
+  line-height: 1.1428571em;
+  line-height: 0.75em;
+  width: 1.5em;
+}
+.date span.day {
+  color: #767676;
+}
+.date span.number {
+  font-size: 1.5em;
+  line-height: 1.3333333em;
+  line-height: inherit;
+  color: #a84242;
+}
+.date span.month {
+  color: #e29c9c;
+}
+
+.date:after {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  background: url("images/star.png");
+}
+
+.post {
+  margin-left: 6.25em;
 }
 
 ol {
@@ -163,19 +213,79 @@ ul {
 
 /* ::Media queries */
 /* ------------------------------------------------------------ */
+@media screen and (min-width: 20em) {
+  header {
+    width: 94%;
+    background-position: center;
+    height: 202px;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
+
+  .date-column {
+    width: 100%;
+  }
+
+  .date {
+    width: 100%;
+  }
+
+  .date:after {
+    margin: 1em auto 0.5em auto;
+  }
+
+  article {
+    width: 90%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .post {
+    margin-left: 0;
+  }
+}
 @media screen and (min-width: 30em) {
-  .container {
-    width: 95%;
+  article {
+    width: 80%;
   }
 }
 @media screen and (min-width: 50em) {
-  .container {
-    min-width: 48.75em;
+  header {
+    width: 404px;
+    height: 202px;
   }
-}
-@media screen and (min-width: 77.5em) {
-  .container {
-    max-width: 67.5em;
+
+  .date-column {
+    float: left;
+    text-align: left;
+    width: 6.25em;
+  }
+
+  .date {
+    width: 1.5em;
+  }
+
+  .date:after {
+    float: left;
+    margin: auto;
+    margin-left: 2.15em;
+    margin-top: -1.6em;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  .post {
+    margin-left: 6.25em;
+  }
+
+  article {
+    width: 60%;
   }
 }
 @media print {

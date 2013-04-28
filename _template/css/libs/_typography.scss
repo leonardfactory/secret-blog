@@ -13,7 +13,7 @@
 
 h1 { 
 	@include adjust-font-size-to(36px); 
-	margin: 0 0 rhythm(3, 36px) 0;  						// 3 lines below, based on font size
+	margin: 0 0 rhythm(2, 36px) 0;  						// 3 lines below, based on font size
 } 
 			
 h2 { 
@@ -42,8 +42,8 @@ h6 {
 } 	
 
 p, pre, label { 
-	@include adjust-font-size-to(16px); 
-	margin: 0 0 rhythm(2, 16px) 0;							// 2 lines below, based on font size
+	@include adjust-font-size-to(22px);
+	margin: 0 0 rhythm(2, 22px) 0;							// 2 lines below, based on font size
 }
 
 ol, ul {
