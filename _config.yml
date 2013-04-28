@@ -4,12 +4,12 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: false
-pygments: true
+pygments: false
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : LeonardBlog
+title : LeonardFactory Blog
 tagline: A blog where I write stuff while drinking coffee.
 author :
   name : Leonard
@@ -28,8 +28,17 @@ author :
 #
 production_url : http://blog.leonardfactory.com
 
+# Using redcarpet2 to render markdown and using awesome code-highlight features
+markdown: redcarpet2
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+# LeonardFactory config!
+leonardfactory:
+	analytics:
+		tracking_id: 'UA-40500550-1'
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
-#
 JB :
   version : 0.3.0
 
@@ -65,7 +74,7 @@ JB :
   #   http://s3.amazonaws.com/yoursite/themes/watermelon
   #   /assets
   #
-  ASSET_PATH : false
+  ASSET_PATH : /assets
 
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
@@ -101,7 +110,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : '-'
     getclicky :
       site_id : 
     mixpanel :

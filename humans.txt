@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Leonardo Ascione -- Designer&Developer -- @leonardfactory
+
+# THANKS
+
+    Visual Idiot -- For keeping me happy while reading twitter -- @idiot
+    
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css, jQuery, Modernizr
+    Sassaparilla, SASS, Compass,
+    Jekyll

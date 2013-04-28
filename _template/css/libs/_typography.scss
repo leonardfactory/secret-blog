@@ -60,18 +60,43 @@ li {
 
 ul 			{ @include unordered; } 						// Include unordered list from mixins by default
 ol 			{ @include ordered;	}							// Include ordered list from mixins by default
-strong, b 	{ font-weight: 600; }
+strong, b 	{ font-weight: 700; }
 em, i, q 	{ font-style: italic; }
 
 blockquote {
-	padding-left: em-font(16px);
-	border-left: em-font(5px) solid grey;
+	padding-left: em-font(48px);
+	//border-left: em-font(5px) solid grey;
+	color: $lighter-gray;
 	line-height: normal;
 	margin: 0;
+	@include margin-trailer(3, $base-font-size);
+
+	background: url('images/quote.png') no-repeat;
+	background-position: top left;
+
 	p {
 		font-style: italic;
 		margin: 0;
-		@include adjust-font-size-to(20px); 
-		margin: rhythm(3, 20px) 0 rhythm(3, 20px) 0; 		//  3 lines above / 3 lines below, based on font size
+		@include adjust-font-size-to(28px);
+		margin: rhythm(2, 20px) 0 rhythm(2, 20px) 0; 		//  3 lines above / 3 lines below, based on font size
 	}
+
+	cite {
+		color: $tertiary;
+	}
+
+	cite:before {
+		content: "\2014\00A0";
+	}
+}
+
+pre {
+	@include adjust-font-size-to(16px);
+	padding: rhythm(1, 16px);
+
+
+	@include border-radius(4px);
+	background-color: #fdfdfd;
+	@include box-shadow(0 1px rgba(255,255,255,.75), inset 0 1px 3px rgba(0,0,0,.07));
+	border: solid 1px #dedede;
 }
