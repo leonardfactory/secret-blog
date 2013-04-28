@@ -1,0 +1,32 @@
+---
+layout: default
+title: Blog
+---
+{% include JB/setup %}
+
+<!-- Show last 5 posts here -->
+{% for post in paginator.posts  %}
+	{% assign excerpt = true %}
+  	{% include themes/leonardfactory/post_item.html %}
+{% endfor %}
+
+<!-- Pages pages and pages -->
+<ul class="pagination">
+  <li>
+  {% if paginator.previous_page %}
+    <a href="/page{{paginator.previous_page}}" class="previous">&larr; Previous</a>
+  {% else %}
+    <span class="previous">&larr; Previous</span>
+  {% endif %}
+  </li>
+  <li>
+	<span class="page_number ">Page {{paginator.page}} of {{paginator.total_pages}}</span>
+  </li>
+  <li>
+  {% if paginator.next_page %}
+    <a href="/page{{paginator.next_page}}" class="next ">Next &rarr;</a>
+  {% else %}
+    <span class="next ">Next &rarr;</span>
+  {% endif %}
+  </li>
+</ul>

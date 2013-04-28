@@ -1,3 +1,55 @@
+pre {
+  counter-reset: line-numbering;
+  border: solid 1px #d9d9d9;
+  border-radius: 0;
+  background: #fff;
+  padding: 0;
+  line-height: 23px;
+  margin-bottom: 30px;
+  white-space: pre;
+  overflow-x: auto;
+  word-break: inherit;
+  word-wrap: inherit;
+}
+
+pre a::before {
+  content: counter(line-numbering);
+  counter-increment: line-numbering;
+  padding-right: 1em;
+  /* space after numbers */
+  width: 25px;
+  text-align: right;
+  opacity: 0.7;
+  display: inline-block;
+  color: #aaa;
+  background: #eee;
+  margin-right: 16px;
+  padding: 2px 10px;
+  font-size: 13px;
+  border-right: 1px solid #dedede;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+pre a:first-of-type::before {
+  padding-top: 10px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.9) 0px 1px 1px inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.9) 0px 1px 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.9) 0px 1px 1px inset;
+}
+
+pre a:last-of-type::before {
+  padding-bottom: 10px;
+}
+
+pre a:only-of-type::before {
+  padding: 10px;
+}
+
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 .clearfix, .container, article, section {
@@ -33,7 +85,7 @@ body {
 }
 
 a {
-  color: #4b4b4b;
+  color: #a84242;
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -42,9 +94,11 @@ a {
   white-space: -moz-pre-wrap;
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
+  text-decoration: none;
 }
 a:hover, a:focus, a:active {
   color: #a84242;
+  text-decoration: underline;
 }
 
 h1 {
@@ -143,7 +197,6 @@ blockquote cite:before {
 pre {
   font-size: 1em;
   line-height: 1.5em;
-  padding: 0.5em;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -167,7 +220,7 @@ pre {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'blanchcaps', 'Helvetica Neue', sans-serif;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   font-size: 3em;
   line-height: 1.1666667em;
   color: #a84242;
@@ -180,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 95%;
 }
 
-/* Example styles - you'll most likey want to remove*/
+/* Custom styles */
 header {
   margin: 0 auto;
   margin-top: 1em;
@@ -191,6 +244,15 @@ header {
 
 article {
   margin: 0 auto;
+}
+
+hr {
+  background: url("images/separator.png") no-repeat;
+  border: none;
+  width: 106px;
+  height: 12px;
+  margin-top: 4.5em;
+  margin-bottom: 4.5em;
 }
 
 .date {
@@ -224,6 +286,20 @@ article {
 
 .post {
   margin-left: 6.25em;
+}
+
+/* Pagination */
+ul.pagination {
+  text-align: center;
+  padding: 0;
+  color: #767676;
+  font-size: 1.375em;
+  line-height: 1.4545455em;
+  list-style: none;
+}
+ul.pagination li {
+  display: list-item;
+  margin: 0.5em 0;
 }
 
 ol {
@@ -277,6 +353,11 @@ ul {
   article {
     width: 80%;
   }
+
+  ul.pagination li {
+    display: inline-block;
+    margin: 0 1em;
+  }
 }
 @media screen and (min-width: 50em) {
   header {
@@ -311,6 +392,15 @@ ul {
 
   article {
     width: 60%;
+  }
+
+  ul.pagination li {
+    margin: 0 2em;
+  }
+}
+@media screen and (min-width: 77.5em) {
+  ul.pagination li {
+    margin: 0 3em;
   }
 }
 @media print {

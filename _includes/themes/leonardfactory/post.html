@@ -1,9 +1,9 @@
 <article>
 	<div class="date-column">
 		<div class="date">
-			<span class="day">{{ page.date | date('%a') | upcase }}</span>
-			<span class="number">{{ page.date | date('%d') }}</span>
-			<span class="month">{{ page.date | date('%b') | upcase }}</span>
+			<span class="day">{{ page.date | date: '%a' | upcase }}</span>
+			<span class="number">{{ page.date | date: '%d' }}</span>
+			<span class="month">{{ page.date | date: '%b' | upcase }}</span>
 		</div>
 	</div>
 	<div class="post">

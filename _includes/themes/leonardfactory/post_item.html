@@ -1,0 +1,19 @@
+<article>
+	<div class="date-column">
+		<div class="date">
+			<span class="day">{{ post.date | date: '%a' | upcase }}</span>
+			<span class="number">{{ post.date | date: '%d' }}</span>
+			<span class="month">{{ post.date | date: '%b' | upcase }}</span>
+		</div>
+	</div>
+	<div class="post">
+		<h1>{{ post.title }} {% if post.tagline %}<small>{{post.tagline}}</small>{% endif %}</h1>
+		{% if excerpt and post.excerpt %}
+	   	 	{{ post.excerpt }}
+	   	 	<p> <a href="{{ post.url }}/#more" class="more-link"><span class="readmore">Read the rest of this entry &rdquo;</span></a></p>
+	  	{% else %}
+	   	 	{{ post.content | mark_excerpt }}
+	 	{% endif %}
+	</div>
+</article>
+<hr />

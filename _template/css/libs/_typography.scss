@@ -92,7 +92,7 @@ blockquote {
 
 pre {
 	@include adjust-font-size-to(16px);
-	padding: rhythm(1, 16px);
+	// padding: rhythm(1, 16px);
 
 
 	@include border-radius(4px);

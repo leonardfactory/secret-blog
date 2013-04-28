@@ -26,6 +26,8 @@
 @import "libs/settings";
 @import "libs/mixins";
 
+@import "linenumbers";
+
 
 
 /* ::Clearfixs and extends. Use which suits best */
@@ -67,8 +69,11 @@ body {
 a {
 	color: $action;
 	@include force-wrap;					// force text links to wrap
+	text-decoration: none;
+
 	&:hover, &:focus, &:active {
-		color: $action-respond
+		color: $action-respond;
+		text-decoration: underline;
 	}
 }
 
@@ -91,7 +96,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'blanchcaps', 'Helvetica Neue', sans-serif;
 	font-weight: 500;
-	letter-spacing: 0.12em;
+	letter-spacing: 0.08em;
 
 	@include adjust-font-size-to(48px);
 
@@ -110,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 	width: 95%;
 }
 
-/* Example styles - you'll most likey want to remove*/
+/* Custom styles */
 header {
 	margin: 0 auto;
 	@include margin-leader(2);
@@ -125,6 +130,14 @@ article {
 	margin: 0 auto;
 }
 
+hr {
+	background: url('images/separator.png') no-repeat;
+	border: none; // reset
+	width: 106px;
+	height: 12px;
+	@include margin-leader(9);
+	@include margin-trailer(9);
+}
 
 
 .date {
@@ -162,6 +175,22 @@ article {
 
 .post {
 	margin-left: em-font(100px);
+}
+
+/* Pagination */
+ul.pagination {
+	text-align: center;
+	padding: 0;
+	color: $light-gray;
+
+	@include adjust-font-size-to(22px);
+
+	list-style: none;
+
+	li {
+		display: list-item;
+		margin: rhythm(1) 0;
+	}
 }
 
 section 				{ @extend .clearfix; }
@@ -215,6 +244,11 @@ ul 						{ @include unordered-inside; }
 	article {
 		width: 80%;
 	}
+
+	ul.pagination li {
+			display: inline-block;
+			margin: 0 rhythm(2);
+	}
 }
 
 
@@ -255,11 +289,17 @@ ul 						{ @include unordered-inside; }
 	article {
 		width: 60%;
 	}
+
+	ul.pagination li {
+			margin: 0 rhythm(4);
+	}
 }
 
 // Eg for 1240px
 @media screen and (min-width: em-font(1240px)) {
-
+	ul.pagination li {
+		margin: 0 rhythm(6);
+	}
 }
 
 // Print styles
