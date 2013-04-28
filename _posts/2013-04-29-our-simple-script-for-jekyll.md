@@ -39,4 +39,4 @@ class Jekyll::MarkdownConverter
 end
 ```
 
-I made this substantially hacking only [this plugin](http://dev.af83.com/2012/02/27/howto-extend-the-redcarpet2-markdown-lib.html), thus it doesn't work.
+I made this substantially hacking `OtherWork.copy()` only [this plugin](http://dev.af83.com/2012/02/27/howto-extend-the-redcarpet2-markdown-lib.html), thus it doesn't work.
