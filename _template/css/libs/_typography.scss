@@ -44,6 +44,7 @@ h6 {
 p, pre, label { 
 	@include adjust-font-size-to(22px);
 	margin: 0 0 rhythm(2, 22px) 0;							// 2 lines below, based on font size
+	line-height: 2em;
 }
 
 ol, ul {
@@ -94,6 +95,20 @@ pre {
 	@include adjust-font-size-to(16px);
 	// padding: rhythm(1, 16px);
 
+
+	@include border-radius(4px);
+	background-color: #fdfdfd;
+	@include box-shadow(0 1px rgba(255,255,255,.75), inset 0 1px 3px rgba(0,0,0,.07));
+	border: solid 1px #dedede;
+
+	overflow-y: hidden;
+}
+
+code.inline-code {
+	@include adjust-font-size-to(14px);
+	padding: rhythm(0.5, 16px) rhythm(1, 16px);
+
+	color: $light-gray;
 
 	@include border-radius(4px);
 	background-color: #fdfdfd;

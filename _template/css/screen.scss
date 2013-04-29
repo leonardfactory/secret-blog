@@ -287,7 +287,7 @@ ul 						{ @include unordered-inside; }
 	}
 
 	article {
-		width: 60%;
+		width: 80%;
 	}
 
 	ul.pagination li {
@@ -297,6 +297,9 @@ ul 						{ @include unordered-inside; }
 
 // Eg for 1240px
 @media screen and (min-width: em-font(1240px)) {
+	article {
+		width: 60%;
+	}
 	ul.pagination li {
 		margin: 0 rhythm(6);
 	}

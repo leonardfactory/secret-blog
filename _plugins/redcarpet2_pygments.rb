@@ -7,6 +7,10 @@ class HTMLwithPygments < Redcarpet::Render::HTML
     colorized = Pygments.highlight(code, :lexer => language, :options => {:lineanchors => "line"})
     colorized.sub(/<pre>/, "<pre><code class=\"#{language}\">").sub(/<\/pre>/, "</code></pre>")
   end
+  
+  def codespan(code)
+    "<code class=\"inline-code\">#{code}</code>"
+  end 
 end
 
 class Jekyll::MarkdownConverter
