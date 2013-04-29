@@ -40,3 +40,6 @@ end
 ```
 
 I made this substantially hacking `OtherWork.copy()` only [this plugin](http://dev.af83.com/2012/02/27/howto-extend-the-redcarpet2-markdown-lib.html), thus it doesn't work.
+
+> You are never too old to set another goal or to dream a new dream.
+> <cite>C.S. Lewis</cite>
