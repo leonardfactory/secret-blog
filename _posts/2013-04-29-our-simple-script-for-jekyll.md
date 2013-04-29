@@ -11,6 +11,8 @@ published: true
 
 So here we go. Here's a simple colorizer plugin to give possibility to use Pygments options even using redcarpet.
 
+<!--more-->
+
 ```ruby
 require 'redcarpet'
 require 'pygments'
