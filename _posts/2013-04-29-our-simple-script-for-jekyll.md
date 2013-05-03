@@ -45,7 +45,7 @@ I made this substantially hacking `OtherWork.copy()` only [this plugin](http://d
 
 I'm going to add this paragraph only to test if there are enough whitespaces in multiple text lines. Even with an image!
 
-![Google](http://www.giornalettismo.com/wp-content/uploads/2012/10/google-tassa-770x546.jpg)
+![Google](http://dribbble.s3.amazonaws.com/users/24203/screenshots/1056186/asseenon.jpg)
 
 > You are never too old to set another goal or to dream a new dream.
 > <cite>C.S. Lewis</cite>
