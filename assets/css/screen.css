@@ -417,6 +417,20 @@ ul {
   list-style-type: disc;
 }
 
+img {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 1px;
+  border: 10px solid white;
+  max-width: 92%;
+  margin-left: 4px;
+}
+
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 @media screen and (min-width: 20em) {

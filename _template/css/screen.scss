@@ -284,6 +284,14 @@ section 				{ @extend .clearfix; }
 ol 						{ @include ordered-inside; }
 ul 						{ @include unordered-inside; }
 
+img {
+	//@include box-shadow(rgba(black, 0.4) 0 2px 1px 0 inset);
+	@include border-radius(4px);
+	@include box-shadow(rgba(black, 0.1) 0 1px 3px 1px);
+	border: 10px solid white;
+	max-width: 92%;
+	margin-left: 4px;
+}
 
 
 /* ::Media queries */
