@@ -43,5 +43,9 @@ end
 
 I made this substantially hacking `OtherWork.copy()` only [this plugin](http://dev.af83.com/2012/02/27/howto-extend-the-redcarpet2-markdown-lib.html), thus it doesn't work.
 
+I'm going to add this paragraph only to test if there are enough whitespaces in multiple text lines. Even with an image!
+
+![Google](http://www.giornalettismo.com/wp-content/uploads/2012/10/google-tassa-770x546.jpg)
+
 > You are never too old to set another goal or to dream a new dream.
 > <cite>C.S. Lewis</cite>
