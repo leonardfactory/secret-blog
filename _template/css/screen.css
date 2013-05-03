@@ -52,7 +52,7 @@ pre a:only-of-type::before {
 
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
-.clearfix, .container, article, section {
+.clearfix, .container, article, footer, section {
   overflow: hidden;
   *zoom: 1;
 }
@@ -140,7 +140,7 @@ h6 {
 p, pre, label {
   font-size: 1.375em;
   line-height: 1.4545455em;
-  margin: 0 0 0.7272727em 0;
+  margin: 0.3636364em 0 1.4545455em 0;
   line-height: 1.8em;
 }
 
@@ -243,9 +243,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'blanchcaps', 'Helvetica Neue', sans-serif;
   font-weight: 500;
   letter-spacing: 0.08em;
+  color: #a84242;
+}
+
+h1 {
   font-size: 3em;
   line-height: 1.1666667em;
-  color: #a84242;
 }
 
 /* ::Layout styles - Layouts hold one or more modules together. */
@@ -256,15 +259,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Custom styles */
-header {
+a.home-link {
+  display: block;
   margin: 0 auto;
-  margin-top: 1em;
+  margin-top: 3em;
   margin-bottom: 3em;
+  max-width: 404px;
+}
+
+header {
   background-image: url("images/logo.png");
   background-repeat: no-repeat;
 }
 
 article {
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -312,6 +321,9 @@ hr {
 
 /* Pagination */
 ul.pagination {
+  margin: 0 auto;
+  margin-bottom: 2em;
+  width: 90%;
   text-align: center;
   padding: 0;
   color: #767676;
@@ -320,8 +332,79 @@ ul.pagination {
   list-style: none;
 }
 ul.pagination li {
+  width: 100%;
   display: list-item;
-  margin: 0.5em 0;
+  padding: 0.5em 0;
+  box-sizing: border-box;
+}
+
+/* Disqus fix for margin */
+#disqus_thread {
+  margin-bottom: 3.5em;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  font-size: 0.75em;
+  line-height: 1.3333333em;
+  text-align: center;
+  font-style: italic;
+  color: #f2f2f2;
+  background-image: url("images/bg-dark.png");
+  background-repeat: repeat;
+  padding-top: 4.5em;
+}
+footer hr {
+  background-image: url("images/footer-separator.png");
+  width: 27px;
+  height: 12px;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+ul.social {
+  list-style: none;
+  padding: 0;
+}
+ul.social li {
+  display: list-item;
+  width: 100%;
+}
+ul.social a, ul.social a:visited {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  -webkit-transition-property: background-position-y;
+  -moz-transition-property: background-position-y;
+  -o-transition-property: background-position-y;
+  transition-property: background-position-y;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  background-position-y: 48px;
+}
+ul.social a:hover, ul.social a:focus {
+  background-position-y: 0;
+}
+ul.social a.twitter {
+  background-image: url("images/twitter.png");
+}
+ul.social a.github {
+  background-image: url("images/github.png");
+}
+ul.social a.mail {
+  background-image: url("images/mail.png");
+}
+ul.social a.dribbble {
+  background-image: url("images/dribbble.png");
+}
+
+/* General */
+.author {
+  color: #e29c9c;
 }
 
 ol {
@@ -337,8 +420,11 @@ ul {
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 @media screen and (min-width: 20em) {
-  header {
+  a.home-link {
     width: 94%;
+  }
+
+  header {
     background-position: center;
     height: 202px;
     -webkit-background-size: contain;
@@ -363,6 +449,10 @@ ul {
     width: 90%;
   }
 
+  ul.pagination {
+    width: 90%;
+  }
+
   h1 {
     text-align: center;
   }
@@ -376,12 +466,29 @@ ul {
     width: 80%;
   }
 
+  ul.pagination {
+    width: 80%;
+  }
+
   ul.pagination li {
     display: inline-block;
-    margin: 0 1em;
+    width: 32%;
+  }
+
+  ul.social li {
+    display: inline-block;
+    width: auto;
+    margin: 0 0.5em;
+  }
+  ul.social li a {
+    margin: 0;
   }
 }
 @media screen and (min-width: 50em) {
+  a.home-link {
+    width: 404px;
+  }
+
   header {
     width: 404px;
     height: 202px;
@@ -412,12 +519,9 @@ ul {
     margin-left: 6.25em;
   }
 
-  article {
-    width: 80%;
-  }
-
-  ul.pagination li {
-    margin: 0 2em;
+  ul.social li {
+    display: inline-block;
+    margin: 0 1em;
   }
 }
 @media screen and (min-width: 77.5em) {
@@ -425,8 +529,8 @@ ul {
     width: 60%;
   }
 
-  ul.pagination li {
-    margin: 0 3em;
+  ul.pagination {
+    width: 60%;
   }
 }
 @media print {

@@ -24,24 +24,27 @@
 	        {% assign tags_list = page.tags %}
 	        {% include JB/tags_list %}
 	      </ul>
-	    {% endunless %}  
-	
-	    <div class="pagination">
-	      <ul>
-	      {% if page.previous %}
-	        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
-	      {% else %}
-	        <li class="prev disabled"><a>&larr; Previous</a></li>
-	      {% endif %}
-	        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
-	      {% if page.next %}
-	        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
-	      {% else %}
-	        <li class="next disabled"><a>Next &rarr;</a>
-	      {% endif %}
-	      </ul>
-	    </div>
-	
-		{% include JB/comments %}
-	</div>
+	    {% endunless %} 
+	</div> 
+	<hr />
+    <ul class="pagination">
+	  <li>
+      {% if page.previous %}
+        <a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}" class="previous">&larr; Previous</a></li>
+      {% else %}
+        <span class="previous">&larr; Previous</span>
+      {% endif %}
+	  </li>
+      <li>
+		  <a href="{{ BASE_PATH }}{{ site.JB.archive_path }}" class="page_number">Archive</a></li>
+	  <li>
+      {% if page.next %}
+        <a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}" class="next">Next &rarr;</a>
+      {% else %}
+        <span class="next ">Next &rarr;</span>
+      {% endif %}
+	  </li>
+    </ul>
+	<hr />
+	{% include JB/comments %}
 </article>

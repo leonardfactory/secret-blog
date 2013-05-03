@@ -10,7 +10,7 @@
 		<h1>{{ post.title }} {% if post.tagline %}<small>{{post.tagline}}</small>{% endif %}</h1>
 		{% if excerpt and post.excerpt %}
 	   	 	{{ post.excerpt }}
-	   	 	<p> <a href="{{ post.url }}/#more" class="more-link"><span class="readmore">Read the rest of this entry &rdquo;</span></a></p>
+	   	 	<p> <a href="{{ post.url }}/#more" class="more-link"><span class="readmore">Read the rest of this post &rarr;</span></a></p>
 	  	{% else %}
 	   	 	{{ post.content | mark_excerpt }}
 	 	{% endif %}

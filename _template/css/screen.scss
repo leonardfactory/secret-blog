@@ -17,7 +17,7 @@
 
 
 
-// ::Imports pre-render. Must be after reset 
+// ::Imports pre-render. Must be after reset
 // ------------------------------------------------------------
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
@@ -61,7 +61,7 @@ html {
 	background-repeat: repeat;
 }
 
-body { 
+body {
 	color: $base-color;
 	font-family: 'Droid Serif', Georgia, serif;
 }
@@ -78,7 +78,7 @@ a {
 }
 
 // Import base typography into the cascade (if required)
-@import "libs/typography"; 		
+@import "libs/typography";
 
 // Build up font from fonts/
 @font-face {
@@ -98,13 +98,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
 	letter-spacing: 0.08em;
 
-	@include adjust-font-size-to(48px);
-
 	color: $secondary;
 }
 
-
-
+h1 {
+	@include adjust-font-size-to(48px);
+}
 
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */
@@ -116,16 +115,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Custom styles */
-header {
+a.home-link {
+	display: block;
 	margin: 0 auto;
-	@include margin-leader(2);
+	@include margin-leader(6);
 	@include margin-trailer(6);
+	max-width: 404px;
+}
 
+header {
 	background-image: url('images/logo.png');
 	background-repeat: no-repeat;
 }
 
 article {
+	width: 90%;
 	@extend .clearfix;
 	margin: 0 auto;
 }
@@ -179,6 +183,10 @@ hr {
 
 /* Pagination */
 ul.pagination {
+	margin: 0 auto;
+	@include margin-trailer(4);
+
+	width: 90%;
 	text-align: center;
 	padding: 0;
 	color: $light-gray;
@@ -188,10 +196,89 @@ ul.pagination {
 	list-style: none;
 
 	li {
+		width: 100%;						// Equally distributed "Previous", "Pages X of Y" and "Next"
 		display: list-item;
-		margin: rhythm(1) 0;
+		padding: rhythm(1) 0;
+		box-sizing: border-box;
 	}
 }
+
+/* Disqus fix for margin */
+#disqus_thread {
+	@include margin-trailer(7);
+}
+
+/* Footer */
+footer {
+	@extend .clearfix;
+	width: 100%;
+
+	@include adjust-font-size-to(12px);
+	text-align: center;
+	font-style: italic;
+	color: #f2f2f2;
+
+	background-image: url('images/bg-dark.png');
+	background-repeat: repeat;
+
+	@include padding-leader(9);
+
+	hr {
+		background-image: url('images/footer-separator.png');
+		width: 27px;
+		height: 12px;
+
+		@include margin-leader(5);
+		@include margin-trailer(5);
+	}
+}
+
+ul.social {
+
+	list-style: none;
+	padding: 0; // Normalize, why?
+
+	li {
+		display: list-item;
+		width: 100%;
+	}
+
+	a, a:visited {
+		display: block;
+		width: 48px;
+		height: 48px;
+
+		margin: 0 auto;
+
+		@include transition-property(background-position-y);
+		@include transition-duration(0.4s);
+		background-position-y: 48px;
+	}
+
+	a:hover, a:focus {
+		background-position-y: 0;
+	}
+
+	a.twitter {
+		background-image: url('images/twitter.png');
+	}
+
+	a.github {
+		background-image: url('images/github.png');
+	}
+
+	a.mail {
+		background-image: url('images/mail.png');
+	}
+
+	a.dribbble {
+		background-image: url('images/dribbble.png');
+	}
+}
+
+/* General */
+
+.author 				{ color: $tertiary; }
 
 section 				{ @extend .clearfix; }
 ol 						{ @include ordered-inside; }
@@ -207,8 +294,12 @@ ul 						{ @include unordered-inside; }
 // Below examples use a mobile-first approach
 
 @media screen and (min-width: em-font(320px)) {
-	header {
+
+	a.home-link {
 		width: 94%;
+	}
+
+	header {
 		background-position: center;
 		height: 202px;
 		@include background-size("contain");
@@ -226,34 +317,45 @@ ul 						{ @include unordered-inside; }
 		margin: em-font(16px) auto  em-font(8px) auto;
 	}
 
-	article {
-		width: 90%;
-	}
+	article 			{ width: 90%; }
 
-	h1 {
-		text-align: center;
-	}
+	ul.pagination		{ width: 90%; }
 
-	.post {
-		margin-left: 0;
-	}
+	h1 					{ text-align: center; }
+
+	.post  				{ margin-left: 0; }
 }
 
 // Eg for 480px
 @media screen and (min-width: em-font(480px)) {
-	article {
-		width: 80%;
-	}
+	article 			{ width: 80%; }
+
+	ul.pagination		{ width: 80%; }
 
 	ul.pagination li {
-			display: inline-block;
-			margin: 0 rhythm(2);
+		display: inline-block;
+		width: 32%;
+		//margin: 0 rhythm(2);
+	}
+
+	ul.social li {
+		display: inline-block;
+		width: auto;
+		margin: 0 rhythm(1);
+
+		a {
+			margin: 0;
+		}
 	}
 }
 
 
 // Eg for 800px
 @media screen and (min-width: em-font(800px)) {
+
+	a.home-link {
+		width: 404px;
+	}
 
 	header {
 		//margin: inherit auto;
@@ -286,22 +388,24 @@ ul 						{ @include unordered-inside; }
 		margin-left: em-font(100px);
 	}
 
-	article {
-		width: 80%;
+	ul.pagination li {
+		//margin: 0 rhythm(4);
 	}
 
-	ul.pagination li {
-			margin: 0 rhythm(4);
+	ul.social li {
+		display: inline-block;
+		margin: 0 rhythm(2);
 	}
 }
 
 // Eg for 1240px
 @media screen and (min-width: em-font(1240px)) {
-	article {
-		width: 60%;
-	}
+	article 			{ width: 60%; }
+
+	ul.pagination		{ width: 60%; }
+
 	ul.pagination li {
-		margin: 0 rhythm(6);
+		//margin: 0 rhythm(6);
 	}
 }
 
@@ -315,7 +419,7 @@ ul 						{ @include unordered-inside; }
 }
 
 
-// IOS specifics 
+// IOS specifics
 @media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
 	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
 }
@@ -356,10 +460,10 @@ ul 						{ @include unordered-inside; }
 #grid div.horiz{
 	// Use this one NOT using a global border-box setting
 	// height: $base-line-height - 1px;
-	
+
 	// Use this one if you ARE using a global border-box setting
     height: $base-line-height;
-    
+
     // Carry on...
     border-bottom: 1px solid #ddd;
     margin: 0;
