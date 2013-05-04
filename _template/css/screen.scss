@@ -115,6 +115,8 @@ h1 {
 }
 
 /* Custom styles */
+
+// Home button
 a.home-link {
 	display: block;
 	margin: 0 auto;
@@ -128,8 +130,9 @@ header {
 	background-repeat: no-repeat;
 }
 
+/** Article **/
 article {
-	width: 90%;
+	width: $wrapper-width-320;
 	@extend .clearfix;
 	margin: 0 auto;
 }
@@ -141,6 +144,11 @@ hr {
 	height: 12px;
 	@include margin-leader(9);
 	@include margin-trailer(9);
+
+	&.soft {
+		@include margin-leader(6);
+		@include margin-trailer(6);
+	}
 }
 
 
@@ -179,6 +187,14 @@ hr {
 
 .post {
 	margin-left: em-font(100px);
+
+	h1 a, h1 a:visited, h1 a:focus {
+		text-decoration: none;
+	}
+
+	h1 a:hover,  {
+		text-decoration: underline;
+	}
 }
 
 /* Pagination */
@@ -186,7 +202,7 @@ ul.pagination {
 	margin: 0 auto;
 	@include margin-trailer(4);
 
-	width: 90%;
+	width: $wrapper-width-320;
 	text-align: center;
 	padding: 0;
 	color: $light-gray;
@@ -276,9 +292,82 @@ ul.social {
 	}
 }
 
+/* ::Single page */
+/* ------------------------------------------------------------ */
+
+/* General centered page */
+section.main {
+	width: $wrapper-width-320;
+	margin: 0 auto;
+	text-align: center;
+	h1 			{ text-align: center !important; }
+}
+
+#archive {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: list-item;
+			//display: table;
+			border-spacing: auto;
+			width: 100%;
+			@include margin-trailer(3);
+		}
+
+		li .date-box {
+			display: block;
+			text-align: left;
+			@include adjust-font-size-to(14px);
+		}
+
+		li .link {
+			display: block;
+			text-align: left;
+			@include adjust-font-size-to(22px);
+		}
+	}
+}
+/*#archive {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: table;
+			border-spacing: 12px;
+			width: 100%;
+		}
+
+		li .date-box {
+			text-align: left;
+			display: table-cell;
+			width: 50%;
+			@include adjust-font-size-to(22px);
+		}
+
+		li .link {
+			display: table-cell;
+			width: 50%;
+			text-align: right;
+			@include adjust-font-size-to(22px);
+		}
+	}
+} */
+
 /* General */
 
-.author 				{ color: $tertiary; }
+a.author, a.author:visited {
+	color: $tertiary;
+	text-decoration: none;
+}
+
+a.author:hover, a.author:focus  {
+	text-decoration: underline;
+}
 
 section 				{ @extend .clearfix; }
 ol 						{ @include ordered-inside; }
@@ -287,9 +376,9 @@ ul 						{ @include unordered-inside; }
 img {
 	//@include box-shadow(rgba(black, 0.4) 0 2px 1px 0 inset);
 	@include border-radius(4px);
-	@include box-shadow(rgba(black, 0.1) 0 1px 3px 1px);
-	border: 10px solid white;
-	max-width: 92%;
+	@include box-shadow(rgba(black, 0.08) 0 1px 2px);
+	border: 18px solid white;
+	max-width: 86%;
 	margin-left: 4px;
 }
 
@@ -325,20 +414,17 @@ img {
 		margin: em-font(16px) auto  em-font(8px) auto;
 	}
 
-	article 			{ width: 90%; }
-
-	ul.pagination		{ width: 90%; }
+	article, ul.pagination, section.main { width: $wrapper-width-320; }
 
 	h1 					{ text-align: center; }
 
 	.post  				{ margin-left: 0; }
 }
 
-// Eg for 480px
+// For 480px
 @media screen and (min-width: em-font(480px)) {
-	article 			{ width: 80%; }
 
-	ul.pagination		{ width: 80%; }
+	article, ul.pagination, section.main { width: $wrapper-width-480; }
 
 	ul.pagination li {
 		display: inline-block;
@@ -358,7 +444,7 @@ img {
 }
 
 
-// Eg for 800px
+// For 800px
 @media screen and (min-width: em-font(800px)) {
 
 	a.home-link {
@@ -396,25 +482,36 @@ img {
 		margin-left: em-font(100px);
 	}
 
-	ul.pagination li {
-		//margin: 0 rhythm(4);
-	}
-
 	ul.social li {
 		display: inline-block;
 		margin: 0 rhythm(2);
 	}
+
+	// List
+	#archive ul li 		{
+		display: table;
+		border-spacing: 12px;
+		margin-bottom: 0;
+
+		.date-box {
+			display: table-cell;
+			width: 50%;
+			text-align: left;
+			@include adjust-font-size-to(22px);
+		}
+
+		.link {
+			display: table-cell;
+			width: 50%;
+			text-align: right;
+		}
+	}
 }
 
-// Eg for 1240px
+// For 1240px
 @media screen and (min-width: em-font(1240px)) {
-	article 			{ width: 60%; }
 
-	ul.pagination		{ width: 60%; }
-
-	ul.pagination li {
-		//margin: 0 rhythm(6);
-	}
+	article, ul.pagination, section.main { width: $wrapper-width-1240; }
 }
 
 // Print styles
