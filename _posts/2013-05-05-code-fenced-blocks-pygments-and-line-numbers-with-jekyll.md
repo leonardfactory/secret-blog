@@ -12,6 +12,7 @@ When I started this personal blog project, the first feature I wanted was code h
 
 The first problem I meet was using Pygments with code fenced blocks (did someone say three backticks?). Using something like `{% raw %}{% highlight ruby %}{% endraw %}` is not my style, but switching rendering engine to **redcarpet** solved the problem at a glance.
 
+<!-- more -->
 Even finding a nice color theme wasn't hard: [Solarized](http://ethanschoonover.com/solarized) is a wonderful palette from Ethan Schoonover.
 
 > Solarized is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications.

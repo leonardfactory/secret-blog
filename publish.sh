@@ -14,5 +14,4 @@ git add -A
 git status -s | git commit -F-
 git push origin gh-pages || exit
 git checkout master
-echo "\n"
 echo 'Published! You are a nice guy :)'
