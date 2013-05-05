@@ -41,7 +41,7 @@ Placing this code saved as `redcarpet_pygments.rb` _(i.e.)_ in the `_plugin` fol
 require 'redcarpet'
 require 'pygments'
 
-# Provides a custom Redcarpet renderer with some tweaks for code blocks and links.
+# Provides a custom Redcarpet renderer with some tweaks for code blocks.
 class HTMLwithPygmentsCodeblocks < Redcarpet::Render::HTML
   def block_code(code, language)
     colorized = Pygments.highlight(code, :lexer => language, :options => {:lineanchors => "line"}) # Add lineanchors for line numbers
