@@ -717,7 +717,7 @@ img {
 }
 @media screen and (min-width: 77.5em) {
   article, ul.pagination, section.main {
-    width: 60%;
+    width: 80%;
   }
 }
 @media print {
@@ -750,16 +750,23 @@ img {
 
 /* ::Debugs and #grid by Jon Gibbins */
 /* ----------------------------------------------------------- */
+/*
 #grid {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-#grid div.horiz {
-  height: 8px;
-  border-bottom: 1px solid #ddd;
-  margin: 0;
-  padding: 0;
-}
+#grid div.horiz{
+	// Use this one NOT using a global border-box setting
+	// height: $base-line-height - 1px;
+
+	// Use this one if you ARE using a global border-box setting
+    height: $base-line-height;
+
+    // Carry on...
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+} */
