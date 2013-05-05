@@ -9,18 +9,9 @@
 	<div class="post">
 		<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
 		{{ content }}
-		
-	    {% unless page.categories == empty %}
-	      <ul class="tag_box inline">
-	        <li><i class="icon-folder-open"></i></li>
-	        {% assign categories_list = page.categories %}
-	        {% include JB/categories_list %}
-	      </ul>
-	    {% endunless %}  
 	
 	    {% unless page.tags == empty %}
-	      <ul class="tag_box inline">
-	        <li><i class="icon-tags"></i></li>
+	      <ul class="tag-list inline">
 	        {% assign tags_list = page.tags %}
 	        {% include JB/tags_list %}
 	      </ul>

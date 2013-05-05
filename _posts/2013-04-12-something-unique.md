@@ -2,7 +2,9 @@
 layout: post
 title: "Something unique"
 description: Hi!
-category: new-here
+category: Design
+tags: [Photoshop, Creativity, Shrimps]
+published: false
 ---
 {% include JB/setup %}
 So, how can i say it. 

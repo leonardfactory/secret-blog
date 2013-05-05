@@ -4,7 +4,7 @@ title: "Our simple script for Jekyll"
 description: ""
 category: 
 tags: []
-published: true
+published: false
 ---
 
 {% include JB/setup %}

@@ -413,6 +413,31 @@ ul.social a.dribbble {
   background-image: url("images/dribbble.png");
 }
 
+/* ::Categories & Tags */
+/* ------------------------------------------------------------ */
+ul.tag-list {
+  list-style: none;
+  padding: 0;
+  	/* li::after {
+  		content: '';
+  		display: inline-block;
+  		background: url('images/dot.png');
+  		width: 6px;
+  		height: 7px;
+  		margin: auto 0.8em;
+  	}
+  
+  	li:last-of-type::after {
+  		content: '';
+  		background: none;
+  	} */
+}
+ul.tag-list li {
+  display: inline-block;
+  margin: 0.4em auto;
+  font-weight: bold;
+}
+
 /* ::Single page */
 /* ------------------------------------------------------------ */
 /* General centered page */
@@ -425,57 +450,110 @@ section.main h1 {
   text-align: center !important;
 }
 
-#archive ul {
+/*
+	Class providing inner contents styled in a particular way.
+*/
+.lister ul {
   list-style: none;
-  margin: 0;
   padding: 0;
 }
-#archive ul li {
+.lister ul li {
   display: list-item;
   border-spacing: auto;
   width: 100%;
   margin-bottom: 1.5em;
 }
-#archive ul li .date-box {
+.lister ul li a span::before {
+  content: '\00A0\2014\00A0';
+}
+.lister ul li a span {
+  font-weight: normal;
+  color: #e29c9c;
+  font-size: 1em;
+}
+.lister ul li .date-box {
   display: block;
   text-align: left;
   font-size: 0.875em;
   line-height: 1.7142857em;
 }
-#archive ul li .link {
+.lister ul li .link {
   display: block;
   text-align: left;
   font-size: 1.375em;
   line-height: 1.4545455em;
 }
 
-/*#archive {
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+ul.heading {
+  font-size: 1.4em;
+}
+ul.heading li {
+  border-spacing: 0 !important;
+}
 
-		li {
-			display: table;
-			border-spacing: 12px;
-			width: 100%;
-		}
+/* ::Tags */
+/* ------------------------------------------------------------ */
+.tag-list a::before, a.tag::before {
+  content: '';
+  display: inline-block;
+  background: url("images/tag-start.png");
+  width: 19px;
+  height: 26px;
+  line-height: 26px;
+  margin-left: -29px;
+  margin-right: 10px;
+}
 
-		li .date-box {
-			text-align: left;
-			display: table-cell;
-			width: 50%;
-			@include adjust-font-size-to(22px);
-		}
+.tag-list a, a.tag {
+  background: url("images/tag-content.png");
+  display: inline-block;
+  color: #ffffff;
+  padding: 0 10px 0 10px;
+  margin-left: 38px;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  	/* span {
+  		vertical-align: top;
+  		color: $tertiary;
+  	}
+  
+  	span::before {
+  		vertical-align: top;
+  		content: '\00A0\2014\00A0';
+  	} */
+}
 
-		li .link {
-			display: table-cell;
-			width: 50%;
-			text-align: right;
-			@include adjust-font-size-to(22px);
-		}
-	}
-} */
+.tag-list a::after, a.tag::after {
+  content: '';
+  display: inline-block;
+  background: url("images/tag-end.png");
+  width: 6px;
+  height: 26px;
+  line-height: 26px;
+  margin-right: -26px;
+  margin-left: 10px;
+}
+
+.lister .tag-list li {
+  border-spacing: 0 !important;
+}
+
+.lister .tag-list a {
+  margin-left: 0;
+  padding: 0 15px 0 15px;
+}
+
+.lister .tag-list a::before {
+  margin-left: -39px;
+}
+
+.lister .tag-list a::after {
+  margin-right: -26px;
+}
+
 /* General */
 a.author, a.author:visited {
   color: #e29c9c;
@@ -507,6 +585,7 @@ img {
   box-shadow: rgba(0, 0, 0, 0.08) 0 1px 2px;
   border: 18px solid white;
   max-width: 86%;
+  height: auto;
   margin-left: 4px;
 }
 
@@ -609,19 +688,19 @@ img {
     margin: 0 1em;
   }
 
-  #archive ul li {
+  .lister ul li {
     display: table;
     border-spacing: 12px;
     margin-bottom: 0;
   }
-  #archive ul li .date-box {
+  .lister ul li .date-box {
     display: table-cell;
     width: 50%;
     text-align: left;
     font-size: 1.375em;
     line-height: 1.4545455em;
   }
-  #archive ul li .link {
+  .lister ul li .link {
     display: table-cell;
     width: 50%;
     text-align: right;

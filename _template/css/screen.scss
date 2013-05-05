@@ -292,6 +292,34 @@ ul.social {
 	}
 }
 
+/* ::Categories & Tags */
+/* ------------------------------------------------------------ */
+ul.tag-list {
+	list-style: none;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		margin: 0.4em auto;
+		//color: $tertiary;
+		font-weight: bold;
+	}
+
+	/* li::after {
+		content: '';
+		display: inline-block;
+		background: url('images/dot.png');
+		width: 6px;
+		height: 7px;
+		margin: auto 0.8em;
+	}
+
+	li:last-of-type::after {
+		content: '';
+		background: none;
+	} */
+}
+
 /* ::Single page */
 /* ------------------------------------------------------------ */
 
@@ -303,10 +331,12 @@ section.main {
 	h1 			{ text-align: center !important; }
 }
 
-#archive {
+/*
+	Class providing inner contents styled in a particular way.
+*/
+.lister {
 	ul {
 		list-style: none;
-		margin: 0;
 		padding: 0;
 
 		li {
@@ -315,6 +345,16 @@ section.main {
 			border-spacing: auto;
 			width: 100%;
 			@include margin-trailer(3);
+
+			a span::before {
+				content: '\00A0\2014\00A0';
+
+			}
+			a span {
+				font-weight: normal;
+				color: $tertiary;
+				font-size: 1em;
+			}
 		}
 
 		li .date-box {
@@ -330,33 +370,70 @@ section.main {
 		}
 	}
 }
-/*#archive {
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
 
-		li {
-			display: table;
-			border-spacing: 12px;
-			width: 100%;
-		}
+ul.heading {
+	font-size: 1.4em;
+	li { border-spacing: 0 !important; }
+}
 
-		li .date-box {
-			text-align: left;
-			display: table-cell;
-			width: 50%;
-			@include adjust-font-size-to(22px);
-		}
+/* ::Tags */
+/* ------------------------------------------------------------ */
+.tag-list a::before, a.tag::before {
+	content: '';
+	display: inline-block;
+	background: url('images/tag-start.png');
+	width: 19px;
+	height: 26px;
+	line-height: 26px;
+	margin-left: -29px;
+	margin-right: 10px;
+}
 
-		li .link {
-			display: table-cell;
-			width: 50%;
-			text-align: right;
-			@include adjust-font-size-to(22px);
-		}
+.tag-list a, a.tag {
+	background: url('images/tag-content.png');
+	display: inline-block;
+	color: #ffffff;
+	padding: 0 10px 0 10px;
+	margin-left: (19px * 2);
+	vertical-align: top;
+	font-size: 16px;
+	line-height: 26px;
+	height: 26px;
+	box-sizing: border-box;
+
+	/* span {
+		vertical-align: top;
+		color: $tertiary;
 	}
-} */
+
+	span::before {
+		vertical-align: top;
+		content: '\00A0\2014\00A0';
+	} */
+}
+
+.tag-list a::after, a.tag::after {
+	content: '';
+	display: inline-block;
+	background: url('images/tag-end.png');
+	width: 6px;
+	height: 26px;
+	line-height: 26px;
+	margin-right: -26px;
+	margin-left: 10px;
+}
+
+// Tags page
+.lister .tag-list li 			{ border-spacing: 0 !important; }
+
+.lister .tag-list a {
+	margin-left: 0;
+	padding: 0 15px 0 15px;
+}
+
+.lister .tag-list a::before 	{ margin-left: -39px; }
+
+.lister .tag-list a::after 		{ margin-right: -26px; }
 
 /* General */
 
@@ -379,6 +456,7 @@ img {
 	@include box-shadow(rgba(black, 0.08) 0 1px 2px);
 	border: 18px solid white;
 	max-width: 86%;
+	height: auto;
 	margin-left: 4px;
 }
 
@@ -488,7 +566,7 @@ img {
 	}
 
 	// List
-	#archive ul li 		{
+	.lister ul li 		{
 		display: table;
 		border-spacing: 12px;
 		margin-bottom: 0;

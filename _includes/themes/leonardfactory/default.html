@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	    <title>{{ page.title }}</title>
+	    <title>{% if page.title != empty %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 	    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 	    <meta name="author" content="{{ site.author.name }}">
    	 	
@@ -33,13 +33,13 @@
         <![endif]-->
 
         <!-- Real content -->
-		
 		<a class="home-link" href="{{ BASE_PATH }}/">
 			<header></header>
 		</a>
 
 		{{ content }}
 		
+		<!-- So, do you wanna find me, mh? -->
 		<footer>
 			<p>
 				Written with <s>love</s> coffee by <a href="mailto:me@leonardfactory.com" class="author">Leonardo Ascione</a>.
