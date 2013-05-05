@@ -8,6 +8,8 @@
 	</div>
 	<div class="post">
 		<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
+		{% include JB/sharing %}
+		
 		{{ content }}
 	
 	    {% unless page.tags == empty %}
@@ -17,7 +19,7 @@
 	      </ul>
 	    {% endunless %} 
 	</div> 
-	<hr />
+	<hr class="soft" />
     <ul class="pagination">
 	  <li>
       {% if page.previous %}
@@ -36,6 +38,6 @@
       {% endif %}
 	  </li>
     </ul>
-	<hr />
+	<hr class="soft" />
 	{% include JB/comments %}
 </article>

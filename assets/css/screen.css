@@ -349,6 +349,14 @@ ul.pagination li {
   box-sizing: border-box;
 }
 
+/* Sharing */
+ul.post-share {
+  padding: 0;
+}
+ul.post-share li {
+  display: inline-block;
+}
+
 /* Disqus fix for margin */
 #disqus_thread {
   margin-bottom: 3.5em;
