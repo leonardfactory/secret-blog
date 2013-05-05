@@ -4,7 +4,7 @@
  <title>LeonardFactory Blog</title>
  <link href="http://blog.leonardfactory.com/" rel="self"/>
  <link href="http://blog.leonardfactory.com"/>
- <updated>2013-05-05T23:54:31+02:00</updated>
+ <updated>2013-05-05T23:57:47+02:00</updated>
  <id>http://blog.leonardfactory.com</id>
  <author>
    <name>Leonard</name>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;The first problem I meet was using Pygments with code fenced blocks (did someone say three backticks?). Using something like &lt;code class=&quot;inline-code&quot;&gt;{% highlight ruby %}&lt;/code&gt; is not my style, but switching rendering engine to &lt;strong&gt;redcarpet&lt;/strong&gt; solved the problem at a glance.&lt;/p&gt;
 
-&lt;!-- more --&gt;
+&lt;!--more--&gt;
 
 &lt;p&gt;Even finding a nice color theme wasn&amp;#39;t hard: &lt;a href=&quot;http://ethanschoonover.com/solarized&quot; target=&quot;_blank&quot;&gt;Solarized&lt;/a&gt; is a wonderful palette from Ethan Schoonover.&lt;/p&gt;
 
