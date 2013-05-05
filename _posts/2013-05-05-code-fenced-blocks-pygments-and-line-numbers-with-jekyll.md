@@ -4,12 +4,13 @@ title: "Code fenced blocks, Pygments and line numbers with jekyll"
 description: "Pygments for code highlighting, line numbers with CSS Counters and custom redcarpet plugin"
 category: 
 tags: ["Coding", "Jekyll"]
+published: false
 ---
 
 {% include JB/setup %}
 When I started this personal blog project, the first feature I wanted was code highlighting. Markdown with **Pygments** is the right man for the job, and **Jekyll** has nice support, so I began writing some code.
 
-The first problem I meet was using Pygments with code fenced blocks (did someone say three backticks?). Using something like `{% highlight ruby %}` is not my style, but switching rendering engine to **redcarpet** solved the problem at a glance.
+The first problem I meet was using Pygments with code fenced blocks (did someone say three backticks?). Using something like `{% raw %}{% highlight ruby %}{% endraw %}` is not my style, but switching rendering engine to **redcarpet** solved the problem at a glance.
 
 Even finding a nice color theme wasn't hard: [Solarized](http://ethanschoonover.com/solarized) is a wonderful palette from Ethan Schoonover.
 
