@@ -5,8 +5,8 @@
         <description>LeonardFactory Blog - Leonard</description>
         <link>http://blog.leonardfactory.com</link>
         <link>http://blog.leonardfactory.com</link>
-        <lastBuildDate>2013-05-05T23:15:46+02:00</lastBuildDate>
-        <pubDate>2013-05-05T23:15:46+02:00</pubDate>
+        <lastBuildDate>2013-05-05T23:39:07+02:00</lastBuildDate>
+        <pubDate>2013-05-05T23:39:07+02:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -15,6 +15,8 @@
                 <description>&lt;p&gt;When I started this personal blog project, the first feature I wanted was code highlighting. Markdown with &lt;strong&gt;Pygments&lt;/strong&gt; is the right man for the job, and &lt;strong&gt;Jekyll&lt;/strong&gt; has nice support, so I began writing some code.&lt;/p&gt;
 
 &lt;p&gt;The first problem I meet was using Pygments with code fenced blocks (did someone say three backticks?). Using something like &lt;code class=&quot;inline-code&quot;&gt;{% highlight ruby %}&lt;/code&gt; is not my style, but switching rendering engine to &lt;strong&gt;redcarpet&lt;/strong&gt; solved the problem at a glance.&lt;/p&gt;
+
+&lt;!-- more --&gt;
 
 &lt;p&gt;Even finding a nice color theme wasn&amp;#39;t hard: &lt;a href=&quot;http://ethanschoonover.com/solarized&quot; target=&quot;_blank&quot;&gt;Solarized&lt;/a&gt; is a wonderful palette from Ethan Schoonover.&lt;/p&gt;
 
