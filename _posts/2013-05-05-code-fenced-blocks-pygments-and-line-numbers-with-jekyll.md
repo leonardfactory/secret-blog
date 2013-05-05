@@ -4,7 +4,7 @@ title: "Code fenced blocks, Pygments and line numbers with jekyll"
 description: "Pygments for code highlighting, line numbers with CSS Counters and custom redcarpet plugin"
 category: 
 tags: ["Coding", "Jekyll"]
-published: false
+published: true
 ---
 
 {% include JB/setup %}
@@ -18,7 +18,7 @@ Even finding a nice color theme wasn't hard: [Solarized](http://ethanschoonover.
 
 Implementing it needs only a _CSS_ theme, found on [this gist](https://gist.github.com/scotu/1272660) which provides the light scheme, but on this [repository](https://github.com/jrunning/github-solarized) you can find even the dark theme.
 
-So we're going to link the theme in our `<head>`
+So we're going to link the theme in our `{{ '<head>' | escape }}` tag
 
 ```html
 <head>
@@ -140,6 +140,8 @@ code.inline-code {
 
 	@include border-radius(4px);
     border: solid 1px #dedede;
+    
+    white-space: nowrap;
 }
 ```
 
