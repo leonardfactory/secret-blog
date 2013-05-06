@@ -7,3 +7,4 @@
   ga('create', '{{ site.leonardfactory.analytics.tracking_id }}', 'blog.leonardfactory.com');
   ga('send', 'pageview');
 </script>
+
