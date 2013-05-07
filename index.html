@@ -57,7 +57,9 @@
 	<div class="post">
 		<h1><a href="/2013/05/05/code-fenced-blocks-pygments-and-line-numbers-with-jekyll">Code fenced blocks, Pygments and line numbers with jekyll</a> </h1>
 		
-	   	 	<p>When I started this personal blog project, the first feature I wanted was code highlighting. Markdown with <strong>Pygments</strong> is the right man for the job, and <strong>Jekyll</strong> has nice support, so I began writing some code.</p>
+	   	 	<p><strong>Update:</strong> With the <strong>Jekyll v1</strong> release, the old plugin broke, so now you can find in this page the new code. While waiting for an official commit/pull request, you can stick with this fix or, if you are using an older version of <em>Jekyll</em>, you can use the <a href="https://gist.github.com/leonardfactory/5532966" target="_blank">old plugin</a></p>
+
+<p>When I started this personal blog project, the first feature I wanted was code highlighting. Markdown with <strong>Pygments</strong> is the right man for the job, and <strong>Jekyll</strong> has nice support, so I began writing some code.</p>
 
 <p>The first problem I meet was using Pygments with code fenced blocks (did someone say three backticks?). Using something like <code class="inline-code">{% highlight ruby %}</code> is not my style, but switching rendering engine to <strong>redcarpet</strong> solved the problem at a glance.</p>
 
@@ -117,6 +119,8 @@
   ga('create', 'UA-40500550-1', 'blog.leonardfactory.com');
   ga('send', 'pageview');
 </script>
+
+
 		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
