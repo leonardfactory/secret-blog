@@ -2,7 +2,7 @@
 # Generate files and push to github without updating master
 git checkout master
 
-jekyll --no-auto || exit
+jekyll build || exit
 git checkout gh-pages
 git rm -qr .
 cp -r _site/. .
