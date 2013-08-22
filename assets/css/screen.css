@@ -358,6 +358,12 @@ ul.post-share li {
   display: inline-block;
 }
 
+/* Author sign */
+.author-sign {
+  width: 100%;
+  text-align: right;
+}
+
 /* Disqus fix for margin */
 #disqus_thread {
   margin-bottom: 3.5em;
@@ -445,6 +451,9 @@ ul.tag-list li {
   display: inline-block;
   margin: 0.4em auto;
   font-weight: bold;
+}
+ul.tag-list li:first-of-type {
+  margin-left: -1em;
 }
 
 /* ::Single page */
