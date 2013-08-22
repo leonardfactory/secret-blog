@@ -229,6 +229,13 @@ ul.post-share {
 	}
 }
 
+
+/* Author sign */
+.author-sign {
+	width: 100%;
+	text-align: right;
+}
+
 /* Disqus fix for margin */
 #disqus_thread {
 	@include margin-trailer(7);
@@ -313,6 +320,10 @@ ul.tag-list {
 		margin: 0.4em auto;
 		//color: $tertiary;
 		font-weight: bold;
+	}
+
+	li:first-of-type {
+		margin-left: -1em;
 	}
 
 	/* li::after {
